@@ -14,15 +14,6 @@ class Controller extends BaseController
         "Be the change that you wish to see in the world - Mahatma Gandhi",
     );
 
-
-    // public function index()
-    // {
-    //     $totalQuotes = (count(Controller::$quotes));
-    //     $randomNumber = (rand(0,($totalQuotes-1)));
-    //     $randomQuote = Controller::$quotes[$randomNumber];
-    //     return response()->json(['quote' => $randomQuote]);
-    // }
-
     public function index()
     {
         $totalQuotes = (count(Controller::$quotes));
