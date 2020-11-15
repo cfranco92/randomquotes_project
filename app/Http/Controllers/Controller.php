@@ -1,5 +1,5 @@
 <?php
-
+// By Cristian Franco Bedoya
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
