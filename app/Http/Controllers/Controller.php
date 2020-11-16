@@ -22,4 +22,12 @@ class Controller extends BaseController
         return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
     }
 
+    public function show()
+    {
+        $totalQuotes = (count(Controller::$quotes));
+        $randomNumber = (rand(0,($totalQuotes-1)));
+        $randomQuote = Controller::$quotes[$randomNumber];
+        return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
+    }
+
 }
