@@ -24,10 +24,10 @@ class Controller extends BaseController
 
     public function show()
     {
-        $totalQuotes = (count(Controller::$quotes));
-        $randomNumber = (rand(0,($totalQuotes-1)));
-        $randomQuote = Controller::$quotes[$randomNumber];
-        return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
+        $randomNumber = (rand(1,15));
+        $url = "https://cfranco-randomquotes.s3.amazonaws.com/image{$randomNumber}.jpeg";
+        $randomQuoteURL = $url;
+        return response()->json(['quoteImageURL' => $randomQuoteURL, 'server_ip' => gethostbyname(gethostname())]);
     }
 
 }
