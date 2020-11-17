@@ -33,6 +33,15 @@ class Controller extends BaseController
         $randomNumber = (rand(1,15));
         $url = "https://cfranco-randomquotes.s3.amazonaws.com/image{$randomNumber}.jpeg";
         $randomQuoteURL = $url;
-        return response()->json(['quoteImageURL' => $randomQuoteURL, 'server_ip' => gethostbyname(gethostname())]);
+        return response()->json(['quoteImageURL' => $randomQuoteURL, 'container_id' => gethostbyname(gethostname())]);
+    }
+
+    public function showImage()
+    {
+        // In this case, we're creating random url of our images saved in aws s3
+        $randomNumber = (rand(1,15));
+        $url = "https://cfranco-randomquotes.s3.amazonaws.com/image{$randomNumber}.jpeg";
+        $randomQuoteURL = $url;
+        return view('image', ['randomQuoteURL' => $randomQuoteURL, 'server_ip' => gethostbyname(gethostname())]);
     }
 }
